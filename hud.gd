@@ -17,6 +17,7 @@ func show_game_over() -> void:
   # Wait one (1) second before displaying start button
   await get_tree().create_timer(1.0).timeout
   $StartButton.show()
+  $SpaceLabel.show()
 
 ## Update score label to the given value
 func update_score(score: int) -> void:
@@ -29,4 +30,5 @@ func _on_message_timer_timeout() -> void:
 ## Hide the start button and emit start_game
 func _on_start_button_pressed() -> void:
   $StartButton.hide()
+  $SpaceLabel.hide()
   start_game.emit()

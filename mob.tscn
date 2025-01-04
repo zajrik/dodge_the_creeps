@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cklcd5osr6bna"]
+[gd_scene load_steps=11 format=3 uid="uid://cklcd5osr6bna"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_ijnur"]
 [ext_resource type="Texture2D" uid="uid://c6xnd8v1ij4qj" path="res://art/enemyFlyingAlt_1.png" id="1_uxd1j"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dqp88qby7bdn4" path="res://art/enemySwimming_2.png" id="4_o03yc"]
 [ext_resource type="Texture2D" uid="uid://cudt5gheadbmv" path="res://art/enemyWalking_1.png" id="5_mlw7h"]
 [ext_resource type="Texture2D" uid="uid://71ie65ba8b45" path="res://art/enemyWalking_2.png" id="6_2xui8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c5yfv"]
+bounce = 10.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8ac41"]
 animations = [{
@@ -50,6 +53,7 @@ height = 100.0
 
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_c5yfv")
 gravity_scale = 0.0
 script = ExtResource("1_ijnur")
 metadata/_edit_group_ = true

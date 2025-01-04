@@ -14,6 +14,8 @@ func _ready() -> void:
 
 ## Stop ScoreTimer on game over, triggered by player getting hit
 func game_over() -> void:
+  $Music.stop()
+  $DeathSound.play()
   $ScoreTimer.stop()
 
   # Enable demo-mode and enable collision for all current mobs
@@ -24,6 +26,8 @@ func game_over() -> void:
 
 ## Reset score, set player start position and start the StartTimer countdown
 func new_game() -> void:
+  $Music.play()
+
   # Stop mob timer, delete remaining mobs
   $MobTimer.stop()
   get_tree().call_group('mobs', 'queue_free')
